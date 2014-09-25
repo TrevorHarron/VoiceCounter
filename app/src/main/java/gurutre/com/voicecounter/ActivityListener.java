@@ -8,9 +8,9 @@ import android.view.View;
  */
 public class ActivityListener implements View.OnClickListener {
 
-    private Context context;
+    private CounterActivity context;
 
-    public ActivityListener(Context c){
+    public ActivityListener(CounterActivity c){
         this.context = c;
     }
 

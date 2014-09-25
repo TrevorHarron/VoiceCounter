@@ -4,9 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 
 public class Counter extends Activity {
+
+    View.OnClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

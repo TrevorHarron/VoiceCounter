@@ -46,11 +46,13 @@ public class CounterActivity extends Activity {
     }
 
     public void plusOneCallback(){
-
+        cCount += 1;
+        updateCountView(cCount);
     }
 
     public void clearCallback(){
-
+        cCount = 0;
+        updateCountView(cCount);
     }
 
     @Override
@@ -66,11 +68,15 @@ public class CounterActivity extends Activity {
 
                     if( text.contains("one")){
                         cCount += 1;
+                        updateCountView(cCount);
                     }
                 }
                 break;
             }
         }
+    }
+
+    private void updateCountView(int cCount) {
     }
 
 }

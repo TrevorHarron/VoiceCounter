@@ -28,6 +28,14 @@ public class ActivityListener implements View.OnClickListener {
                 Log.v(TAG, "Voice clicked");
                 listenToVoice();
                 break;
+            case R.id.plus_one:
+                Log.v(TAG,"plus one clicked");
+                context.plusOneCallback();
+                break;
+            case R.id.clear:
+                Log.v(TAG,"clear clicked");
+                context.clearCallback();
+                break;
             default:
                 break;
         }

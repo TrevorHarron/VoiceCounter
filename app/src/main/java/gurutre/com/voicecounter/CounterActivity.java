@@ -43,6 +43,10 @@ public class CounterActivity extends Activity {
         if(voiceButton!=null) voiceButton.setOnClickListener(listener);
         plusOneButton = (Button)findViewById(R.id.plus_one);
         if(voiceButton!=null) voiceButton.setOnClickListener(listener);
+        clearButton = (Button)findViewById(R.id.clear);
+        if(clearButton!=null) clearButton.setOnClickListener(listener);
+
+        currentCount  = (TextView)findViewById(R.id.current_Count);
     }
 
     public void plusOneCallback(){

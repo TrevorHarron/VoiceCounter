@@ -81,6 +81,7 @@ public class CounterActivity extends Activity {
     }
 
     private void updateCountView(int cCount) {
+        currentCount.setText(Integer.toString(cCount));
     }
 
 }

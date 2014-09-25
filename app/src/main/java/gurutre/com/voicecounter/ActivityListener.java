@@ -23,7 +23,7 @@ public class ActivityListener implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.voice:
                 Log.v(TAG, "Voice clicked");
                 listenToVoice();
@@ -31,6 +31,7 @@ public class ActivityListener implements View.OnClickListener {
             default:
                 break;
         }
+    }
     private void listenToVoice() {
         Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, "en-US");

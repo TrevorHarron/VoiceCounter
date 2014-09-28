@@ -47,6 +47,7 @@ public class CounterActivity extends Activity {
         if(clearButton!=null) clearButton.setOnClickListener(listener);
 
         currentCount  = (TextView)findViewById(R.id.current_Count);
+        goal = (TextView)findViewById(R.id.goal);
     }
 
     public void plusOneCallback(){

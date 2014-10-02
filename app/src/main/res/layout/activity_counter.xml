@@ -45,7 +45,9 @@
         android:textSize="30sp"
         android:textIsSelectable="false"
         android:layout_below="@+id/current_Count"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:longClickable="false"
+        android:editable="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"

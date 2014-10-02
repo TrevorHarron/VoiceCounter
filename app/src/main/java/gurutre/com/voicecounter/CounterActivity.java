@@ -52,12 +52,13 @@ public class CounterActivity extends Activity {
 
     public void plusOneCallback(){
         cCount += 1;
-        updateCountView(cCount);
+        updateTextView(currentCount,"The Current Count:",cCount);
     }
 
     public void clearCallback(){
         cCount = 0;
-        updateCountView(cCount);
+        updateTextView(currentCount,"The Current Count:",cCount);
+        updateTextView(goal,"Goal: ",0);
     }
 
     @Override
@@ -73,7 +74,7 @@ public class CounterActivity extends Activity {
 
                     if( text.contains("one")){
                         cCount += 1;
-                        updateCountView(cCount);
+                        updateTextView(currentCount,"The Current Count:",cCount);
                     }
                 }
                 break;
@@ -81,8 +82,8 @@ public class CounterActivity extends Activity {
         }
     }
 
-    private void updateCountView(int cCount) {
-        currentCount.setText(Integer.toString(cCount));
+    private void updateTextView(TextView t, String prefix, int num) {
+        t.setText(prefix+Integer.toString(num));
     }
 
 }

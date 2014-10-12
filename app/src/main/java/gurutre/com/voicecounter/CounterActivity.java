@@ -72,10 +72,17 @@ public class CounterActivity extends Activity {
                     String words = "";
                     for(String word: text) words += word+".";
 
-                    if( text.contains("one")){
+                    if( text.contains("one")||
+                            text.contains("plus") ||
+                            text.contains("plus one")){
                         cCount += 1;
                         updateTextView(currentCount,"The Current Count:",cCount);
-                    }
+                        listener.onClick(voiceButton);
+                    }else if( text.contains("clear")){
+                       clearCallback();
+                        return;
+                    } else if(text.contains("stop") || text.contains("end")) return;
+
                 }
                 break;
             }

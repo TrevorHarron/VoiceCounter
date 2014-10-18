@@ -34,7 +34,7 @@ public class CounterActivity extends Activity {
         super.onCreate(savedInstanceState);
         listener = new ActivityListener(this);
         setContentView(R.layout.activity_counter);
-        if(savedInstanceState.containsKey("count"))
+        if(savedInstanceState != null && savedInstanceState.containsKey("count"))
             cCount = savedInstanceState.getInt("count");
         else
             cCount = 0;
@@ -42,7 +42,7 @@ public class CounterActivity extends Activity {
         voiceButton = (Button)findViewById(R.id.voice);
         if(voiceButton!=null) voiceButton.setOnClickListener(listener);
         plusOneButton = (Button)findViewById(R.id.plus_one);
-        if(voiceButton!=null) voiceButton.setOnClickListener(listener);
+        if(plusOneButton!=null) plusOneButton.setOnClickListener(listener);
         clearButton = (Button)findViewById(R.id.clear);
         if(clearButton!=null) clearButton.setOnClickListener(listener);
 
@@ -78,10 +78,13 @@ public class CounterActivity extends Activity {
                         cCount += 1;
                         updateTextView(currentCount,"The Current Count:",cCount);
                         listener.onClick(voiceButton);
-                    }else if( text.contains("clear")){
+                    } else if( text.contains("clear")){
                        clearCallback();
+                       return;
+                    } else if(text.contains("stop") || text.contains("end"))
                         return;
-                    } else if(text.contains("stop") || text.contains("end")) return;
+                    else
+                        return;
 
                 }
                 break;
